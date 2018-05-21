@@ -1,0 +1,177 @@
+<!--
+  Generated template for the YourPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Page</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="outer-content">
+	<!-- events created by the user -->
+	<ion-title>
+		Your Events
+	</ion-title> <br>
+
+	<ion-list style="overflow-y: scroll; height: 40%;">
+
+	  <ion-card>
+	    <ion-card-content>
+	      <ion-card-title id="EVENTS_ID" class="title">
+	        Event 1 Title
+	      </ion-card-title>
+	    </ion-card-content>
+
+	    <ion-row no-padding>
+	      <ion-col>
+	        <button ion-button clear small color="danger" icon-start  [navPush]="eventPage">
+	          <ion-icon name='more'></ion-icon>
+	          See Details
+	        </button>
+	      </ion-col>
+	      <ion-col >
+	        <button ion-button clear small color="danger" icon-start>
+	          <ion-icon name='star'></ion-icon>
+	          Interested
+	        </button>
+	      </ion-col>
+    	</ion-row>
+ 	 </ion-card>
+
+ 	 <ion-card>
+	    <ion-card-content>
+	      <ion-card-title id="EVENTS_ID" class="title">
+	        Event 2 Title
+	      </ion-card-title>
+	    </ion-card-content>
+
+	    <ion-row no-padding>
+	      <ion-col>
+	        <button ion-button clear small color="danger" icon-start  [navPush]="eventPage">
+	          <ion-icon name='more'></ion-icon>
+	          See Details
+	        </button>
+	      </ion-col>
+	      <ion-col >
+	        <button ion-button clear small color="danger" icon-start>
+	          <ion-icon name='star'></ion-icon>
+	          Interested
+	        </button>
+	      </ion-col>
+    	</ion-row>
+ 	 </ion-card>
+
+ 	  <ion-card>
+	    <ion-card-content>
+	      <ion-card-title id="EVENTS_ID" class="title">
+	        Event 2 Title
+	      </ion-card-title>
+	    </ion-card-content>
+
+	    <ion-row no-padding>
+	      <ion-col>
+	        <button ion-button clear small color="danger" icon-start  [navPush]="eventPage">
+	          <ion-icon name='more'></ion-icon>
+	          See Details
+	        </button>
+	      </ion-col>
+	      <ion-col >
+	        <button ion-button clear small color="danger" icon-start>
+	          <ion-icon name='star'></ion-icon>
+	          Interested
+	        </button>
+	      </ion-col>
+    	</ion-row>
+ 	 </ion-card>
+	
+	</ion-list>
+
+
+
+	<!-- events that user is interested in -->
+	<!-- <div class="outer-content"> -->
+	<ion-title>
+		Interested Events
+	</ion-title> <br>
+
+	<ion-list style="overflow-y: scroll; height: 40%;">
+		<ion-card>
+		    <ion-card-content>
+		      <ion-card-title id="EVENTS_ID" class="title">
+		        Event 1 Title<br>
+		        <span style="font-size: 14px;" id="EVENTS_ID" class="Hostname">hosted by X</span>
+		      </ion-card-title>
+		    </ion-card-content>
+
+		    <ion-row no-padding>
+		      <ion-col>
+		        <button ion-button clear small color="danger" icon-start  [navPush]="eventPage">
+		          <ion-icon name='more'></ion-icon>
+		          See Details
+		        </button>
+		      </ion-col>
+		      <ion-col >
+		        <button ion-button clear small color="danger" icon-start>
+		          <ion-icon name='star'></ion-icon>
+		          Interested
+		        </button>
+		      </ion-col>
+		    </ion-row>
+		</ion-card>
+
+		<ion-card>
+		    <ion-card-content>
+		      <ion-card-title id="EVENTS_ID" class="title">
+		        Event 1 Title<br>
+		        <span style="font-size: 14px;" id="EVENTS_ID" class="Hostname">hosted by X</span>
+		      </ion-card-title>
+		    </ion-card-content>
+
+		    <ion-row no-padding>
+		      <ion-col>
+		        <button ion-button clear small color="danger" icon-start  [navPush]="eventPage">
+		          <ion-icon name='more'></ion-icon>
+		          See Details
+		        </button>
+		      </ion-col>
+		      <ion-col >
+		        <button ion-button clear small color="danger" icon-start>
+		          <ion-icon name='star'></ion-icon>
+		          Interested
+		        </button>
+		      </ion-col>
+		    </ion-row>
+		</ion-card>
+
+		<ion-card>
+		    <ion-card-content>
+		      <ion-card-title id="EVENTS_ID" class="title">
+		        Event 2 Title<br>
+		        <span style="font-size: 14px;" id="EVENTS_ID" class="Hostname">hosted by X</span>
+		      </ion-card-title>
+		    </ion-card-content>
+		    <ion-row no-padding>
+		      <ion-col>
+		        <button ion-button clear small color="danger" icon-start  [navPush]="eventPage">
+		          <ion-icon name='more'></ion-icon>
+		          See Details
+		        </button>
+		      </ion-col>
+		      <ion-col >
+		        <button ion-button clear small color="danger" icon-start>
+		          <ion-icon name='star'></ion-icon>
+		          Interested
+		        </button>
+		      </ion-col>
+		    </ion-row>
+		</ion-card>
+	</ion-list>
+
+
+
+</ion-content>

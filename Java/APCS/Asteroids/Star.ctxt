@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=applet_\ length_\ xPos\ yPos
+comment0.target=Star(processing.core.PApplet,\ float,\ float,\ float)
+comment1.params=
+comment1.target=void\ display()
+numComments=2

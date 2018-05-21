@@ -1,0 +1,87 @@
+<!--
+  Generated template for the MainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+ <!--  <ion-navbar color="primary">
+    <ion-title>main</ion-title>
+  </ion-navbar> -->
+
+   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAufeCTbyF6DTdAG8Aqvw0DiY_EgaMj9cs&callback=initMap"
+    async defer></script> -->
+
+    <ion-toolbar color="danger">
+      <ion-title >
+        <h1><i>GoOut</i></h1>
+      </ion-title>
+	    <!-- <ion-buttons start>
+	      <button ion-button icon-only color="danger">
+	        <ion-icon name="notifications"></ion-icon>
+	      </button>
+	    </ion-buttons> -->
+	    <!--<ion-segment color="danger">-->
+	      <!--<ion-segment-button value="nearby">-->
+	        <!--Nearby-->
+	      <!--</ion-segment-button>-->
+	      <!--<ion-segment-button value="following">-->
+	        <!--Following-->
+	      <!--</ion-segment-button>-->
+	    <!--</ion-segment>-->
+	   <!--  <ion-buttons end> -->
+	      <!-- <button ion-button icon-only color="danger" [navPush]="addEventPage">
+	        <ion-icon name="create"></ion-icon>
+	      </button>
+	    </ion-buttons> -->
+  </ion-toolbar>
+
+
+
+
+
+</ion-header>
+
+
+<ion-content>
+	<div #map id="map" width = "50%">
+
+	</div>
+	<ion-footer>
+		<ion-toolbar>
+		<!-- (ionInput)="onInput($event)" -->
+				<ion-searchbar #search name="search" id="search"
+					[showCancelButton] = "shouldShowCancel"
+					(ionCancel)="onCancel($event)">
+				</ion-searchbar>
+				<!-- <ion-input type="text" #search id="search" ></ion-input> -->
+				<div text-center class="center">
+					<button ion-button small icon-start end color = "danger" (click)="searchEvents()">
+ 					<ion-icon name="calendar"></ion-icon> Find Events
+					</button>
+<!-- (click)="searchPeople(this.document.getElementById('searchField'))" -->
+					<button ion-button small icon-end color = "danger" (click)="searchPeople()">
+ 					 Find People <ion-icon name="person"></ion-icon>
+					</button>
+				</div>
+
+
+		</ion-toolbar>
+	</ion-footer>
+
+	<ion-fab top left #fab4>
+    <button ion-fab color="danger"><ion-icon name="arrow-dropdown"></ion-icon></button>
+    <ion-fab-list side="bottom">
+    <!-- (click)="openSocial('facebook', fab4)" -->
+
+      <button ion-fab color="danger" [navPush]="addEventPage"><ion-icon name="create"></ion-icon></button>
+
+      <button ion-fab color="danger" ><ion-icon name="notifications"></ion-icon></button>
+
+      <button ion-fab color="danger" (click)='goToYourPage()'> <ion-icon name="person"></ion-icon></button>
+      <button ion-fab color="danger" (click) ='logout()'><ion-icon name="log-out"></ion-icon></button>
+
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

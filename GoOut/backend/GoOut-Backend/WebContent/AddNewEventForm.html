@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Add New Event</title>
+	</head>
+	<script>
+			function validateInfo(){
+
+				var requeststr = "AddNewEvent?eventName=" 
+						+document.myform.evenntName.value 
+						+ "&userID=" +document.myform.userID.value +
+						"&location=" +document.myform.location.value 
+						+ "&month=" +document.myform.month.value 
+						+ "&startTime=" +document.myform.startTime.value
+						+ "&endTime=" +document.myform.endTime.value
+						+ "&privateEvent=" +document.myform.privateEvent.value
+						+ "&day=" +document.myform.day.value;
+				
+				console.log(requeststr);
+				var xhttp = new XMLHttpRequest();
+				xhttp.open("GET", requeststr, false);
+				xhttp.send();
+
+				if(xhttp.responseText.trim().length > 0){
+					document.getElementById("formerror").innerHTML = xhttp.responseText;
+					return false;
+				}
+				return true;
+			}
+		</script>
+	<body>
+		<div id = "formerror"></div>
+		<form name = "myform" method = "POST" action="AddNewEvent" onsubmit = "return validateInfo();" > 
+			Event Name <input type = "text" name = "eventName" /> <br />
+			<!-- <input type ="password" name = "password" /> <br /> -->
+			User ID <input type = "text" name = "userID" /> <br />
+			Location <input type ="text" name = "location" /> <br />
+			Month <input type ="text" name = "month" /> <br />
+			Day <input type ="text" name = "day" /> <br />
+			Start Time <input type ="text" name = "startTime" /> <br />
+			End Time <input type ="text" name = "endTime" /> <br />
+			Private Event <input type ="text" name = "privateEvent" /> <br />
+			<input type="checkbox" name="private" value="isPrivate"> Private <br>
+			<input type = "submit" name = "submit" value = "Submit Query" />
+		</form>
+	</body>
+</html>

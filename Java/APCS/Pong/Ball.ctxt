@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=applet_\ x_\ y_\ xSpeed_\ ySpeed_\ red\ green\ blue
+comment0.target=Ball(processing.core.PApplet,\ float,\ float,\ float,\ float,\ int,\ int,\ int)
+comment1.params=
+comment1.target=void\ move()
+comment2.params=
+comment2.target=void\ display()
+comment3.params=p
+comment3.target=void\ checkCollision(Paddle)
+comment4.params=
+comment4.target=float\ getXSpeed()
+comment5.params=
+comment5.target=float\ getYSpeed()
+comment6.params=
+comment6.target=int\ getGreen()
+comment7.params=xPos\ yPos
+comment7.target=void\ setBallPos(int,\ int)
+comment8.params=xVel\ yVel
+comment8.target=void\ setBallSpeed(int,\ int)
+numComments=9

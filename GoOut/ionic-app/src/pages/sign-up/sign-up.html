@@ -1,0 +1,48 @@
+<!--
+  Generated template for the SignUpPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-toolbar>
+		<ion-label text-center color="danger" font-family="'Dancing Script', cursive" style="font-size : 50px">
+			<i>GoOut</i>
+		</ion-label>
+	</ion-toolbar>
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> 
+</ion-header>
+
+
+<ion-content padding>
+	<form [formGroup]="signUpForm" (ngSubmit)= " validateSignUp(signUpForm.value)">
+		<ion-list>
+			<ion-item>
+				<ion-label floating>Full Name</ion-label>
+				<ion-input type="text" formControlName="fullname"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Username</ion-label>
+				<ion-input type="text" formControlName="username"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Password</ion-label>
+				<ion-input type="password" formControlName="password"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Confirm Password</ion-label>
+				<ion-input type="password" formControlName="confirmPassword"></ion-input>
+			</ion-item>
+		</ion-list>
+		<div text-center id="error"></div>
+		<button ion-button block color="secondary" type="submit" [disabled]="!signUpForm.valid" width="50%">Sign up</button> <br>
+	</form>
+	
+	
+	<button ion-button block color="danger" width="50%" [navPush]="LoginPage">Log in</button> <br>	 	 
+	<button ion-button block clear width="50%" [navPush]="LimitedMainPage">Continue as Guest</button>
+
+</ion-content>

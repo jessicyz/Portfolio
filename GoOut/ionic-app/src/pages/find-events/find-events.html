@@ -1,0 +1,96 @@
+<!--
+  Generated template for the FindEventsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Found Events</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <ion-card *ngFor="let event of events">
+  <ion-card-content>
+
+    <ion-card-title id="EVENTS_ID" class="title"> {{event.title}}</ion-card-title>
+    <p>Location : {{event.location}}</p>
+    <p>Hosted by : {{event.user}} </p>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-start (click)="viewDetails(event)">
+          <ion-icon name='more'></ion-icon>
+          See Details
+        </button>
+      </ion-col>
+      <ion-col >
+        <button ion-button clear small color="danger" icon-star *ngIf="!isFollowing(event)" (click) = "follow(event)">
+          <ion-icon name='star'></ion-icon>
+          Interested
+        </button>
+        <button ion-button clear small color="danger" icon-star *ngIf="isFollowing(event)" (click) = "unfollow(event)">
+          <ion-icon name='star'></ion-icon>
+          No Longer Interested
+        </button>
+      </ion-col>
+    </ion-row>
+
+        <!-- <ion-item>
+          <ion-label> {{event.title}}</ion-label>
+        </ion-item> -->
+ </ion-card-content>
+    <!-- <ion-card-content>
+      <ion-card-title id="EVENTS_ID" class="title">
+        Turkey Eating Party<br>
+        <span style="font-size: 14px;" id="EVENTS_ID" class="Hostname">hosted by Jeffrey Miller, PHD.</span>
+      </ion-card-title>
+      <p id="EVENTS_ID" class="description">
+        Event's description goes here....
+        Event's description goes here....
+        Event's description goes here....
+      </p>
+    </ion-card-content>
+
+  -->
+</ion-card>
+
+<!-- <ion-card>
+  <ion-card-content>
+    <ion-card-title id="EVENTS_ID" class="title">
+      Event 2 Title <br>
+      <span style="font-size: 14px;" id="EVENTS_ID" class="Hostname">Hosted by X</span>
+    </ion-card-title>
+    <p id="EVENTS_ID" class="description">
+      Event's description goes here....
+      Event's description goes here....
+      Event's description goes here....
+    </p>
+  </ion-card-content>
+
+  <ion-row no-padding>
+    <ion-col>
+      <button ion-button clear small color="danger" icon-start [navPush]="eventPage">
+        <ion-icon name='more'></ion-icon>
+        See Details
+      </button>
+    </ion-col>
+    <ion-col >
+      <button ion-button clear small color="danger" icon-start>
+        <ion-icon name='star'></ion-icon>
+        Interested
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-card> -->
+
+<ion-footer style="position: fixed;">
+  <ion-buttons text-center>
+    <button ion-button block color="light" (click)="dismiss()">Close</button>
+  </ion-buttons>
+</ion-footer>
+
+</ion-content>
