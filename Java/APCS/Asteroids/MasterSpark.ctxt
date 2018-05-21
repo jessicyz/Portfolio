@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=applet_\ totalPieces_\ startingPosX\ startingPosY\ xSpeed_\ ySpeed_\ length_
+comment0.target=MasterSpark(processing.core.PApplet,\ int,\ float[],\ float[],\ double[],\ double[],\ float[])
+comment1.params=applet_\ ss\ totalPieces_\ totalVelocity_\ length_
+comment1.target=MasterSpark(processing.core.PApplet,\ SpaceShip,\ int,\ double,\ float)
+comment2.params=
+comment2.target=void\ move()
+comment3.params=
+comment3.target=void\ draw()
+numComments=4

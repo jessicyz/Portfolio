@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Kawaii Quest for Kokoro</title>
+		<script src="http://cloud.github.com/downloads/processing-js/processing-js/processing-1.4.1.min.js"></script>
+		<script type="text/processing" data-processing-target="mycanvas">
+//STORY: You are meeting up with an old "friend" from school, Brooke Morgan. You haven't seen her in five years, and unlike wine, she doesn't get better with age, but you are desperate for companionship and hope that a spark can ignite the flames of love. You take her to a famous outdoor restaurant, known for its specialty, the "Mystery Brick." The two of you are chatting and catching up, when suddenly, she collapses. You call 911, but the restaurant is on private property under an undisclosed address, and will take the hospital longer to find. You remember your trusty app, OSA, and get to work
+
+/*STAGE 1: ANALYSIS
+	1. Point and click on different parts of the body and table to find clues
+	2. Click on the clues to read more about their condition
+	3. Find as many clues as you can before the bottom timer runs out
+STAGE 2: TREATMENT
+	1. Point and click on different parts of the body and table to find treatment options
+	2. Select appropriate treatments. Some options will increase the life (timer). Other options will decrease the life timer
+	3. Keep the victim alive until the top timer runs out and the ambulance arrives
+*/
+	
+
+
+		//Size constant
+		var s = 600;
+
+		//levels
+		var stage1 = 0;
+		var stage2 = 0;
+		var stage1directions = 1;
+		var stage2directions = 0;
+
+		
+		var pause = 0;
+
+		//clues
+		var purse = 0;
+		var chest = 0;
+		var face = 0;
+		var food = 0;
+		var throat = 0;
+		var wine = 0;
+		var wrist = 0;
+
+		//blurbs
+		var blurbPurse = 0;
+		var blurbChest = 0;
+		var blurbFace = 0;
+		var blurbFood = 0;
+		var blurbThroat = 0;
+		var blurbWine = 0;
+		var blurbWrist = 0;
+
+		//choices
+		var choicePurse = 0;
+		var choiceChest = 0;
+		var choiceFace = 0;
+		var choiceFood = 0;
+		var choiceThroat = 0;
+		var choiceWine = 0;
+		var choiceWrist = 0;
+
+		//Effects
+		var effectChestCompression = 0;
+		var effectLoosenClothes = 0;
+		var effectTightenClothes = 0;
+		var effectPills = 0;
+		var effectInjection = 0;
+		var effectSteal = 0;
+		var effectLayFlat = 0;
+		var effectMouthtoMouth = 0;
+		var effectFeed = 0;
+		var effectImbibe = 0;
+		
+		//One time treatments
+		var doneLoosenClothes = 0;
+		var doneTightenClothes = 0;
+		var doneInjection = 0;
+		var doneLayFlat = 0;
+
+		//End game
+		var DEAD = 0;
+		var GAMEOVER = 0;
+		
+
+
+		//menu boxes are 222x47
+
+
+
+
+			void setup(){
+				noStroke();
+				size(s+300,s);
+				//size(800,800);
+				background(32,23,69);
+				bg = loadImage("Pictures/table_with_background.png");
+
+				menu = loadImage("Pictures/menu.png");
+
+				directionsStage1 = loadImage("Pictures/directions_stage1.png");
+
+				directionsStage2 = loadImage("Pictures/directions_stage2.png");
+
+				cluePurse = loadImage("Pictures/clue_purse.png");
+
+				clueChest = loadImage("Pictures/clue_chest.png");
+
+				clueFace = loadImage("Pictures/clue_face.png");
+
+				clueFood = loadImage("Pictures/clue_food.png");
+
+				clueThroat = loadImage("Pictures/clue_throat.png");
+
+				clueWine = loadImage("Pictures/clue_wine.png");
+
+				clueWrist = loadImage("Pictures/clue_wrist.png");
+
+				stage_2 = loadImage("Pictures/stage_2.png");
+
+				choiceChestCompressions = loadImage("Pictures/choice_chestcompressions.png");
+				choiceLoosenClothes = loadImage("Pictures/choice_loosenclothes.png");
+
+				choiceTightenClothes = loadImage("Pictures/choice_tightenclothes.png");
+
+				choiceMouthToMouth = loadImage("Pictures/choice_mouthtomouth.png");
+
+				choicePills = loadImage("Pictures/choice_pills.png");
+
+				choiceInjection= loadImage("Pictures/choice_injection.png");
+
+				choiceFeed = loadImage("Pictures/choice_feed.png");
+
+				choiceImbibe = loadImage("Pictures/choice_imbibe.png");
+
+				choiceLayFlat = loadImage("Pictures/choice_layflat.png");
+
+				choiceSteal = loadImage("Pictures/choice_steal.png");
+
+				blurbimageWine = loadImage("Pictures/blurb_wine.png");
+
+				blurbimageFood = loadImage("Pictures/blurb_food.png");
+
+				blurbimagePurse = loadImage("Pictures/blurb_purse.png");
+
+				blurbimageWrist = loadImage("Pictures/blurb_wrist.png");
+
+				blurbimageFace = loadImage("Pictures/blurb_face.png");
+
+				blurbimageThroat = loadImage("Pictures/blurb_throat.png");
+
+				blurbimageChest = loadImage("Pictures/blurb_chest.png");
+
+				effectimageDone = loadImage("Pictures/effect_done.png");
+
+				effectimageLoosenClothes = loadImage("Pictures/effect_loosenclothes.png");
+
+				effectimageTightenClothes = loadImage("Pictures/effect_tightenclothes.png");
+
+				effectimageInjection = loadImage("Pictures/effect_injection.png");
+
+				effectimagePills = loadImage("Pictures/effect_pills.png");
+
+				effectimageSteal = loadImage("Pictures/effect_steal.png");
+
+				effectimageLayFlat = loadImage("Pictures/effect_layflat.png");
+
+				effectimageMouthtoMouth = loadImage("Pictures/effect_mouthtomouth.png");
+
+				effectimageImbibe = loadImage("Pictures/effect_imbibe.png");
+
+				effectimageFeed = loadImage("Pictures/effect_feed.png");
+
+				effectimageChestCompressions = loadImage("Pictures/effect_chestcompressions.png");
+
+				imageDEAD = loadImage("Pictures/DEAD.png");
+
+				imageAcceptable = loadImage("Pictures/acceptable.png");
+
+				imageGood = loadImage("Pictures/good.png");
+
+				imageGreat = loadImage("Pictures/great.png");
+
+				//How much life left
+				life = new Timer();
+
+
+				//How long you have to examine
+				examine = new Timer(s/8,s/11,s*3/4,0.45,159,125,171)
+
+				//How long until the ambulance arrives
+				ambulance = new Timer(0,10,s,.2,0,255,255)
+
+
+			}
+
+			void draw(){
+				noStroke();
+
+				background(32,23,69);
+				image(bg, 0, s/4,s,s*3/4);
+				//image(bg, 0, 200,800,600);
+
+				image(menu, s+5,10);
+
+				if (pause == 0){
+					if ((stage1 == 1 || stage2 == 1)&&(DEAD !== 1 && GAMEOVER !== 1)){
+						life.drawTimer();
+						life.countdownTimer();
+
+						ambulance.drawAmbulanceTimer();
+						ambulance.countdownAmbulanceTimer();
+					}
+
+					if (stage1 == 1){
+						examine.drawExamineTimer();
+						examine.countdownExamineTimer();
+					}
+				}
+
+				//Directions
+
+				if (stage1directions == 1){
+					image(directionsStage1,5,4);
+				}
+
+				if (stage2directions == 1){
+					image(directionsStage2, 5,4);
+				}
+
+				//Showing images of clues
+				if (chest == 1){
+
+					image(clueChest,s+38.5,100)
+				}
+				if (throat == 1){
+					image(clueThroat,s+38.5,147+67/7);
+				}
+
+				if(face==1){
+					image(clueFace,s+38.5,100+47*2+67*2/7)
+				}
+				if (wrist == 1){
+					image(clueWrist, s+5+33.5,100+47*3+67*3/7);
+				}
+
+				if (purse == 1){
+					image(cluePurse, s+5+33.5, 100+47*4+67*4/7);
+					//ypos + 67/7
+				}
+
+				if (food == 1){
+					image(clueFood, s+5+33.5, 100+47*5+67*5/7);
+
+				}
+
+				if (wine ==1){
+					image(clueWine, s+5+33.5, 100+47*6+67*6/7);
+				}
+
+				if (stage1 == 1 && wine == 1 && food== 1 &&purse== 1 &&wrist== 1 &&face== 1 &&throat== 1 &&chest== 1){
+					image(stage_2,s+5+33.5,100+47*7+67*7/7);
+				}
+
+
+
+
+
+
+
+
+				//blurb images
+				if (blurbWine == 1){
+					image(blurbimageWine, 5,4);
+				}
+
+				if (blurbFood == 1){
+					image(blurbimageFood, 5,4);
+				}
+
+				if (blurbPurse == 1){
+					image(blurbimagePurse, 5,4);
+				}
+
+				if (blurbWrist == 1){
+					image(blurbimageWrist,5,4);
+				}
+
+				if (blurbFace == 1){
+					image(blurbimageFace,5,4);
+				}
+
+				if (blurbThroat == 1){
+					image(blurbimageThroat,5,4);
+				}
+
+				if (blurbChest == 1){
+					image(blurbimageChest,5,4);
+				}
+
+
+
+
+
+
+
+
+				//Show images of choices
+				if (stage2 == 1&& GAMEOVER !== 1 && DEAD !== 1){
+					if (choiceChest == 1){
+						image(choiceLoosenClothes, 50,s/12);
+						image(choiceTightenClothes,50*2+222,s/12);
+						if (life.time < s/2){
+							image(choiceChestCompressions,s/2-111,47+10+s/12);
+						}
+					}
+					if (choicePurse == 1){
+						image(choicePills, 50,s/12);
+						image(choiceInjection, 50*2+222,s/12);
+						image(choiceSteal,s/2-111,47+10+s/12);
+					}
+
+					if (choiceThroat == 1){
+						image(choiceLayFlat, s/2-111,s/8);
+					}
+
+					if (choiceFood == 1){
+						image(choiceFeed, s/2-111,s/8);
+					}
+
+					if (choiceWine == 1){
+						image(choiceImbibe, s/2-111,s/8);
+					}
+
+					if (choiceFace == 1){
+						image(choiceMouthToMouth, s/2-111,s/8);
+					}
+				}
+
+
+
+
+
+
+
+				//effects of choices
+				if (effectLoosenClothes == 1){
+					//if (doneLoosenClothes !== 1){
+						image(effectimageLoosenClothes,5,4);
+					//}
+					//else{
+						//image(effectimageDone,5,4);
+					//}
+				}
+
+				if (effectTightenClothes == 1){
+					image(effectimageTightenClothes,5,4);
+				}
+
+				if (effectPills == 1){
+					image(effectimagePills,5,4);
+				}
+
+				if (effectInjection == 1){
+					image(effectimageInjection,5,4);
+				}
+
+				if (effectSteal == 1){
+					image(effectimageSteal,5,4);
+				}
+
+				if (effectChestCompression == 1){
+					image(effectimageChestCompressions,5,4);
+				}
+
+				if (effectLayFlat == 1){
+					image(effectimageLayFlat,5,4);
+				}
+
+				if (effectFeed == 1){
+					image(effectimageFeed,5,4);
+				}
+
+				if (effectImbibe == 1){
+					image(effectimageImbibe,5,4);
+				}
+
+				if (effectMouthtoMouth == 1){
+					image(effectimageMouthtoMouth,5,4);
+				}
+
+				if (DEAD == 1){
+					image(imageDEAD,5,4);
+				}
+
+				if (GAMEOVER == 1){
+					if (life.time > s/2){
+						image(imageGreat,5,4);
+					}
+					if (life.time <=s/2&& life.time > s/4){
+						image(imageGood,5,4);
+					}
+					if (life.time <= s/4){
+						image(imageAcceptable,5,4);
+					}
+				}
+
+
+
+
+			}
+
+
+
+	
+
+			void mouseReleased(){
+
+
+
+				//Unpause
+
+				if (stage1 == 0 && stage2 == 0 && GAMEOVER !== 1 && DEAD !== 1){
+					if (mouseX >= 0 && mouseX <= s+300 && mouseY >= 0 && mouseY <= s){
+						stage1 = 1;
+						stage1directions = 0;
+					}
+				}
+
+				if (stage2directions == 1){
+					if (mouseX >= 0 && mouseX <= s+300 && mouseY >= 0 && mouseY <= s){
+						stage2 = 1;
+						stage2directions = 0;
+					}
+				}
+
+
+				if (pause == 1){
+					if (mouseX >= 0 && mouseX <= s && mouseY >= 0 && mouseY <= s){
+						pause = 0;
+						console.log("Unpause");
+						blurbChest = 0;
+						blurbThroat = 0;
+						blurbFace = 0;
+						blurbWrist = 0;
+						blurbPurse = 0;
+						blurbFood = 0;
+						blurbWine = 0;
+
+						effectChestCompression = 0;
+						effectLoosenClothes = 0;
+						effectTightenClothes = 0;
+						effectPills = 0;
+						effectInjection = 0;
+						effectSteal = 0;
+						effectLayFlat = 0;
+						effectMouthtoMouth = 0;
+						effectFeed = 0;
+						effectImbibe = 0;
+					}
+
+
+				}
+
+
+				//Blurbs
+				if (GAMEOVER !== 1 && DEAD !== 1&&stage2directions!==1){
+					if (chest == 1 && mouseX >= s+38.5 && mouseX <= s+38.5+222 && mouseY >=100 && mouseY <= 100+47){
+						console.log("Brooke Morgan's heart is beating weakly and rapidly. You glance briefly at her necklace. A name appears to have been engraved and messily scratched out");
+						pause = 1;
+						
+						blurbChest = 1;
+						blurbThroat = 0;
+						blurbFace = 0;
+						blurbWrist = 0;
+						blurbPurse = 0;
+						blurbFood = 0;
+						blurbWine = 0;
+
+						choicePurse = 0;
+						choiceChest = 0;
+						choiceFace = 0;
+						choiceFood = 0;
+						choiceThroat = 0;
+						choiceWine = 0;
+						choiceWrist = 0;
+						
+
+					}
+					if (throat == 1 && mouseX >= s+38.5 && mouseX <= s+38.5+222 && mouseY >=100+47+67/7 && mouseY <= 47 + 100+47+67/7){
+						console.log("Brooke Morgan appears to have difficulty breathing. Her breath is raspy, and you hear faint coughing. At least she can still breathe. You should do something about that. The labored breathing, that is.");
+						pause = 1;
+						
+						blurbChest = 0;
+						blurbThroat = 1;
+						blurbFace = 0;
+						blurbWrist = 0;
+						blurbPurse = 0;
+						blurbFood = 0;
+						blurbWine = 0;
+
+						choicePurse = 0;
+						choiceChest = 0;
+						choiceFace = 0;
+						choiceFood = 0;
+						choiceThroat = 0;
+						choiceWine = 0;
+						choiceWrist = 0;
+						
+
+					}
+					if (face == 1 && mouseX >= s+38.5 && mouseX <= s+38.5+222 && mouseY >=100+47*2+67*2/7 && mouseY <= 47 + 100+47*2+67*2/7){
+						console.log("Brooke Morgan's skin is breaking into hives. Her face is swollen, sweaty, and pale. Her eyes are unfocused. Actually, she looks better than she usually does");
+						pause = 1;
+						
+						blurbChest = 0;
+						blurbThroat = 0;
+						blurbFace = 1;
+						blurbWrist = 0;
+						blurbPurse = 0;
+						blurbFood = 0;
+						blurbWine = 0;
+
+						choicePurse = 0;
+						choiceChest = 0;
+						choiceFace = 0;
+						choiceFood = 0;
+						choiceThroat = 0;
+						choiceWine = 0;
+						choiceWrist = 0;
+						
+
+					}
+					if (wrist == 1 && mouseX >= s+38.5 && mouseX <= s+38.5+222 && mouseY >=100+47*3+67*3/7 && mouseY <= 47 + 100+47*3+67*3/7){
+						console.log("Brooke Morgan's pulse is weak and rapid.");
+						pause = 1;
+						
+						blurbChest = 0;
+						blurbThroat = 0;
+						blurbFace = 0;
+						blurbWrist = 1;
+						blurbPurse = 0;
+						blurbFood = 0;
+						blurbWine = 0;
+
+						choicePurse = 0;
+						choiceChest = 0;
+						choiceFace = 0;
+						choiceFood = 0;
+						choiceThroat = 0;
+						choiceWine = 0;
+						choiceWrist = 0;
+						
+
+					}
+					if (purse == 1 && mouseX >= s+38.5 && mouseX <= s+38.5+222 && mouseY >=100+47*4+67*4/7 && mouseY <= 47 + 100+47*4+67*4/7){
+						console.log("You search Brooke Morgan's purse. You find a bottle of pills and an injection kit. You recall the time you accidentally kicked her bag and she nearly bit your head off. It seems like she's not conscious enough to retaliate. You give a long, long, look at her purse. It is such a nice purse. It must have taken someone a long time to make");
+						pause = 1;
+						
+						blurbChest = 0;
+						blurbThroat = 0;
+						blurbFace = 0;
+						blurbWrist = 0;
+						blurbPurse = 1;
+						blurbFood = 0;
+						blurbWine = 0;
+
+						choicePurse = 0;
+						choiceChest = 0;
+						choiceFace = 0;
+						choiceFood = 0;
+						choiceThroat = 0;
+						choiceWine = 0;
+						choiceWrist = 0;
+						
+
+					}
+					if (food == 1 && mouseX >= s+38.5 && mouseX <= s+38.5+222 && mouseY >=100+47*5+67*5/7 && mouseY <= 47 + 100+47*5+67*5/7){
+						console.log("Something about this brick smells fishy");
+						pause = 1;
+						
+						blurbChest = 0;
+						blurbThroat = 0;
+						blurbFace = 0;
+						blurbWrist = 0;
+						blurbPurse = 0;
+						blurbFood = 1;
+						blurbWine = 0;
+						
+						choicePurse = 0;
+						choiceChest = 0;
+						choiceFace = 0;
+						choiceFood = 0;
+						choiceThroat = 0;
+						choiceWine = 0;
+						choiceWrist = 0;
+
+					}
+
+					if (wine == 1 && mouseX >= s+38.5 && mouseX <= s+38.5+222 && mouseY >=100+47*6+67*6/7 && mouseY <= 47 + 100+47*6+67*6/7){
+						console.log("Last time you met Brooke Morgan, more than 5 years ago, she was a heavy alcoholic. She said she is recovering. Despite this, she ordered an expensive, large goblet of fancy wine, with your money no less. She barely took a sip before collapsing. What a waste.");
+						pause = 1;
+						
+						blurbPurse = 0;
+						blurbChest = 0;
+						blurbThroat = 0;
+						blurbFace = 0;
+						blurbWrist = 0;
+						blurbPurse = 0;
+						blurbFood = 0;
+						blurbWine = 1;
+
+						choicePurse = 0;
+						choiceChest = 0;
+						choiceFace = 0;
+						choiceFood = 0;
+						choiceThroat = 0;
+						choiceWine = 0;
+						choiceWrist = 0;
+						
+
+					}
+
+					
+					//Next stage
+					if (stage1 == 1 && mouseX >= s+38.5 && mouseX <= s+38.5+222 && mouseY >=100+47*7+67*7/7 && mouseY <= 47 + 100+47*7+67*7/7){
+						console.log("Proceed");
+						pause = 1;
+						
+						blurbPurse = 0;
+						blurbChest = 0;
+						blurbThroat = 0;
+						blurbFace = 0;
+						blurbWrist = 0;
+						blurbPurse = 0;
+						blurbFood = 0;
+						blurbWine = 0;
+						
+						stage1 = 0;
+						stage2 = 1;
+						stage2directions = 1;
+
+					}
+				}
+
+
+
+
+
+
+
+				//Stage 1 analysis
+				if (stage1 == 1 && pause == 0){
+
+					//Goblet of wine
+					if (mouseX >= 400 && mouseX <= 495 && mouseY >= 230+s/4 && mouseY <= 380+s/4){
+						console.log("Harry Potter and the Goblet of Wine");
+						wine = 1;
+						//pause = 1;
+					}
+
+					//wrist
+					if ((mouseX >= 355 && mouseX <=399 && mouseY >= 196+s/4 && mouseY <= 255+s/4)|| (mouseX >= 399 && mouseX <= 413 && mouseY >= 196 + s/4 && mouseY <= 235 + s/4) || (mouseX>=164 && mouseX <=207 && mouseY>=253+s/4 && mouseY <= 286+s/4)){
+						console.log("wrist");
+						wrist = 1;
+					}
+
+
+
+
+
+
+					//Purse. Stare directly at it
+					if (mouseX >= 84 && mouseX <= 212 && mouseY >= 358+s/4 && mouseY <= 428+s/4){
+						console.log("drugs in back");
+						purse = 1;
+
+					}
+
+					//Unidentifiable "edible"
+					if (mouseX >= 216 && mouseX <= 383 && mouseY >= 290+s/4 && mouseY <= 382+s/4){
+						console.log("Mystery Brick");
+						food = 1;
+					}
+
+					//Throat
+					if (mouseX >= 251 && mouseX <= 316 && mouseY >= 190+s/4 && mouseY <= 215+s/4){
+						console.log("aim for the jugular");
+						throat = 1;
+					}
+					//Chest
+					if ((mouseX >= 239 && mouseX < 251 && mouseY >= 208+s/4 && mouseY <= 289+s/4)||(mouseX > 251 && mouseX < 316 && mouseY > 215+s/4 && mouseY <= 289+s/4)||(mouseX >316 && mouseX <= 329 && mouseY >= 208+s/4 && mouseY <= 289+s/3)){
+						console.log("doki doki");
+						chest = 1;
+					}
+					//head
+					if (mouseX >= 227 && mouseX <= 348 && mouseY >= 81+s/4 && mouseY <= 189+s/4){
+						console.log("headshot");
+						face = 1;
+
+					}
+
+
+				}
+
+
+
+				//Stage 2 treatment
+				if (stage2 == 1 && pause == 0&& GAMEOVER !== 1 && DEAD !== 1){
+
+					//Goblet of wine
+					if (mouseX >= 400 && mouseX <= 495 && mouseY >= 230+s/4 && mouseY <= 380+s/4&& GAMEOVER !== 1 && DEAD !== 1){
+						console.log("give her more alcohol");
+						choicePurse = 0;
+						choiceChest = 0;
+						choiceFace = 0;
+						choiceFood = 0;
+						choiceThroat = 0;
+						choiceWine = 1;
+						choiceWrist = 0;
+						//pause = 1;
+					}
+
+					//wrist
+					if ((mouseX >= 355 && mouseX <=399 && mouseY >= 196+s/4 && mouseY <= 255+s/4)|| (mouseX >= 399 && mouseX <= 413 && mouseY >= 196 + s/4 && mouseY <= 235 + s/4) || (mouseX>=164 && mouseX <=207 && mouseY>=253+s/4 && mouseY <= 286+s/4&& GAMEOVER !== 1 && DEAD !== 1)){
+						console.log("I'll think of something for the wrist");
+						choicePurse = 0;
+						choiceChest = 0;
+						choiceFace = 0;
+						choiceFood = 0;
+						choiceThroat = 0;
+						choiceWine = 0;
+						choiceWrist = 1;
+					}
+
+
+
+
+
+
+					//Purse. Stare directly at it
+					if (mouseX >= 84 && mouseX <= 212 && mouseY >= 358+s/4 && mouseY <= 428+s/4&& GAMEOVER !== 1 && DEAD !== 1){
+						console.log("pills or injection");
+						choicePurse = 1;
+						choiceChest = 0;
+						choiceFace = 0;
+						choiceFood = 0;
+						choiceThroat = 0;
+						choiceWine = 0;
+						choiceWrist = 0;
+
+					}
+
+					//Unidentifiable "edible"
+					if (mouseX >= 216 && mouseX <= 383 && mouseY >= 290+s/4 && mouseY <= 382+s/4&& GAMEOVER !== 1 && DEAD !== 1){
+						console.log("give more food");
+						choicePurse = 0;
+						choiceChest = 0;
+						choiceFace = 0;
+						choiceFood = 1;
+						choiceThroat = 0;
+						choiceWine = 0;
+						choiceWrist = 0;
+					}
+
+					//Throat
+					if (mouseX >= 251 && mouseX <= 316 && mouseY >= 190+s/4 && mouseY <= 215+s/4&& GAMEOVER !== 1 && DEAD !== 1){
+						console.log("something for throat");
+						choicePurse = 0;
+						choiceChest = 0;
+						choiceFace = 0;
+						choiceFood = 0;
+						choiceThroat = 1;
+						choiceWine = 0;
+						choiceWrist = 0;
+					}
+					//Chest
+					if (GAMEOVER !== 1 && DEAD !== 1 &&(mouseX >= 239 && mouseX < 251 && mouseY >= 208+s/4 && mouseY <= 289+s/4)||(mouseX > 251 && mouseX < 316 && mouseY > 215+s/4 && mouseY <= 289+s/4)||(mouseX >316 && mouseX <= 329 && mouseY >= 208+s/4 && mouseY <= 289+s/3)){
+						console.log("loosen clothes. tighten clothes. CPR");
+						choicePurse = 0;
+						choiceChest = 1;
+						choiceFace = 0;
+						choiceFood = 0;
+						choiceThroat = 0;
+						choiceWine = 0;
+						choiceWrist = 0;
+					}
+					//head
+					if (mouseX >= 227 && mouseX <= 348 && mouseY >= 81+s/4 && mouseY <= 189+s/4&& GAMEOVER !== 1 && DEAD !== 1){
+						console.log("mouth to mouth");
+						choicePurse = 0;
+						choiceChest = 0;
+						choiceFace = 1;
+						choiceFood = 0;
+						choiceThroat = 0;
+						choiceWine = 0;
+						choiceWrist = 0;
+
+					}
+
+
+					//Clear Screen
+					if ((effectChestCompression == 1 || effectLoosenClothes == 1 || effectTightenClothes == 1 || effectPills == 1 || effectInjection == 1 || effectSteal == 1 || effectLayFlat == 1 || effectMouthtoMouth == 1 || effectFeed == 1 || effectImbibe == 1)&& (mouseX >= 0 && mouseX <= s && mouseY >= 0 && mouseY <= s)&&(pause == 1)){
+
+						pause = 0;
+
+						effectChestCompression = 0;
+						effectLoosenClothes = 0;
+						effectTightenClothes = 0;
+						effectPills = 0;
+						effectInjection = 0;
+						effectSteal = 0;
+						effectLayFlat = 0;
+						effectMouthtoMouth = 0;
+						effectFeed = 0;
+						effectImbibe = 0;
+						console.log("clear screen");
+					}
+
+
+
+					//Effects and blurbs of choices
+
+
+
+					//Loosen Clothes
+					if (choiceChest == 1 && mouseX>= 50 && mouseX<= 50+222 && mouseY >= s/12 && mouseY<=s/12+47){
+
+
+
+						effectChestCompression = 0;
+						effectLoosenClothes = 1;
+						effectTightenClothes = 0;
+						effectPills = 0;
+						effectInjection = 0;
+						effectSteal = 0;
+						effectLayFlat = 0;
+						effectMouthtoMouth = 0;
+						effectFeed = 0;
+						effectImbibe = 0;
+
+						pause = 1;
+
+						choiceChest =0;
+						if (doneLoosenClothes !== 1){
+							life.time += 50;
+							life.countdown -= .05;
+							console.log("Clothes loosened. Plus health");
+						}
+						doneLoosenClothes = 1;
+						doneTightenClothes = 0;
+						console.log("Clothes loosened");				
+
+						
+					}
+					
+					//Tighten Clothes
+					if (choiceChest == 1 && mouseX>= 50*2+222 && mouseX<= 50+222+222 && mouseY >= s/12 && mouseY<=s/12+47){
+
+
+						effectChestCompression = 0;
+						effectLoosenClothes = 0;
+						effectTightenClothes = 1;
+						effectPills = 0;
+						effectInjection = 0;
+						effectSteal = 0;
+						effectLayFlat = 0;
+						effectMouthtoMouth = 0;
+						effectFeed = 0;
+						effectImbibe = 0;
+
+						pause = 1;
+
+						choiceChest =0;
+						if (doneTightenClothes !== 1){
+							life.time -= 50;
+							life.countdown += .05;
+							console.log("Clothes tightened. Minus health");
+						}
+						doneLoosenClothes = 0;
+						doneTightenClothes = 1;
+						console.log("Clothes tightened");						
+
+						
+					}
+
+					//Chest compressions
+
+
+					if (life.time < s/2 && choiceChest == 1 && mouseX>= s/2-111 && mouseX<= s/2-111+222 && mouseY >= 47+10+s/12 && mouseY<=s/12+47+10+47){
+
+
+						effectChestCompression = 1;
+						effectLoosenClothes = 0;
+						effectTightenClothes = 0;
+						effectPills = 0;
+						effectInjection = 0;
+						effectSteal = 0;
+						effectLayFlat = 0;
+						effectMouthtoMouth = 0;
+						effectFeed = 0;
+						effectImbibe = 0;
+
+						pause = 1;
+
+						choiceChest =0;
+						
+						
+						life.time += 20;
+						console.log("Chest compression");
+
+					
+					}
+						
+
+
+					//Give pills
+					if (choicePurse == 1 && mouseX>= 50 && mouseX<= 50+222 && mouseY >= s/12 && mouseY<=s/12+47){
+
+
+						effectChestCompression = 0;
+						effectLoosenClothes = 0;
+						effectTightenClothes = 0;
+						effectPills = 1;
+						effectInjection = 0;
+						effectSteal = 0;
+						effectLayFlat = 0;
+						effectMouthtoMouth = 0;
+						effectFeed = 0;
+						effectImbibe = 0;
+
+						pause = 1;
+
+						choicePurse =0;
+						
+						
+						life.time -= 100;
+						console.log("Pills given. Decrease health");
+
+						
+					}
+					//Give injection
+					if (choicePurse == 1 && mouseX>= 50*2+222 && mouseX<= 50+222+222 && mouseY >= s/12 && mouseY<=s/12+47){
+
+
+						effectChestCompression = 0;
+						effectLoosenClothes = 0;
+						effectTightenClothes = 0;
+						effectPills = 0;
+						effectInjection = 1;
+						effectSteal = 0;
+						effectLayFlat = 0;
+						effectMouthtoMouth = 0;
+						effectFeed = 0;
+						effectImbibe = 0;
+
+						pause = 1;
+
+						choicePurse =0;
+						if (doneInjection !== 1){
+							life.time += 200;
+							life.countdown = life.countdown* 0.65;
+							console.log("Epinen given. Condition much better");
+						}
+						doneInjection = 1;
+						console.log("Epinen given");						
+
+						
+					}
+
+					//steal purse and run
+					if (choicePurse == 1 && mouseX>= s/2-111 && mouseX<= s/2-111+222 && mouseY >= 47+10+s/12 && mouseY<=s/12+47+10+47){
+
+
+						effectChestCompression = 0;
+						effectLoosenClothes = 0;
+						effectTightenClothes = 0;
+						effectPills = 0;
+						effectInjection = 0;
+						effectSteal = 1;
+						effectLayFlat = 0;
+						effectMouthtoMouth = 0;
+						effectFeed = 0;
+						effectImbibe = 0;
+
+						pause = 1;
+
+						choicePurse =0;
+						
+						
+						life.time = 1;
+						console.log("You stole her purse and legged it out of there");
+
+					
+					}
+
+
+
+					if (choiceThroat == 1 && mouseX>= s/2-111 && mouseX<= s/2-111+222 && mouseY >= s/8 && mouseY<=s/8+47){
+						effectChestCompression = 0;
+						effectLoosenClothes = 0;
+						effectTightenClothes = 0;
+						effectPills = 0;
+						effectInjection = 0;
+						effectSteal = 0;
+						effectLayFlat = 1;
+						effectMouthtoMouth = 0;
+						effectFeed = 0;
+						effectImbibe = 0;
+
+						pause = 1;
+
+						choiceThroat =0;
+						
+						if (doneLayFlat !== 1){
+							life.countdown = life.countdown * .8;
+							console.log("You lay Brooke Morgan flat. She seems to be breathing easier");
+						}
+						doneLayFlat = 1;
+						console.log("Lay flat");
+					}
+
+
+
+					if (choiceFace == 1 && mouseX>= s/2-111 && mouseX<= s/2-111+222 && mouseY >= s/8 && mouseY<=s/8+47){
+						effectChestCompression = 0;
+						effectLoosenClothes = 0;
+						effectTightenClothes = 0;
+						effectPills = 0;
+						effectInjection = 0;
+						effectSteal = 0;
+						effectLayFlat = 0;
+						effectMouthtoMouth = 1;
+						effectFeed = 0;
+						effectImbibe = 0;
+
+						pause = 1;
+
+						choiceFace =0;
+						
+						
+						life.time -= 20;
+						console.log("You try mouth to mouth, but you were not properly trained. Brooke Morgan's condition worsens a little, and she may have taken a few mental hits. She looks faint for different reasons now. You feel the same");
+					}
+					if (choiceFood == 1 && mouseX>= s/2-111 && mouseX<= s/2-111+222 && mouseY >= s/8 && mouseY<=s/8+47){
+						effectChestCompression = 0;
+						effectLoosenClothes = 0;
+						effectTightenClothes = 0;
+						effectPills = 0;
+						effectInjection = 0;
+						effectSteal = 0;
+						effectLayFlat = 0;
+						effectMouthtoMouth = 0;
+						effectFeed = 1;
+						effectImbibe = 0;
+
+						pause = 1;
+
+						choiceFood =0;
+						
+						
+						life.time -= 200;
+						life.countdown = life.countdown * 2;
+						console.log("She is obviously not in the mood. Why would you do that?");
+					}
+
+					if (choiceWine == 1 && mouseX>= s/2-111 && mouseX<= s/2-111+222 && mouseY >= s/8 && mouseY<=s/8+47){
+						effectChestCompression = 0;
+						effectLoosenClothes = 0;
+						effectTightenClothes = 0;
+						effectPills = 0;
+						effectInjection = 0;
+						effectSteal = 0;
+						effectLayFlat = 0;
+						effectMouthtoMouth = 0;
+						effectFeed = 0;
+						effectImbibe = 1;
+
+						pause = 1;
+
+						choiceWine = 0;
+						
+						
+						life.time -= 50;
+						console.log("She can't swallow so all the wine gets on her outfit. Great, now she's dying drunk. What is wrong with you?");
+					}
+
+
+
+				}
+
+
+			}
+
+
+
+		
+
+
+
+			class Timer {
+				//How long you have
+				var time;
+				//How fast time goes
+				var countdown;
+				//colors
+				var r;
+				var g;
+				var b;
+				//Position
+				var xPos;
+				var yPos;
+
+
+				Timer(){
+					xPos = 0;
+					yPos = 25;
+					//time = 800;
+					time = s;
+					countdown = .3;
+					r = 100;
+					g = 255;
+					b = 100;
+				}
+
+
+
+				void drawTimer(){
+					fill(r,g,b)
+					rect(xPos,yPos,time,15)
+				}
+
+				void countdownTimer(){
+					//if (time <= 400){
+					if (time <= 0){
+						time = 0;
+						stage1 = 0;
+						stage2 = 0;
+						pause = 1;
+						DEAD = 1;
+					}
+					else{
+						time = time - countdown;
+					}
+					if (time > s*3/4){
+						r = 0;
+						g = 255;
+						b = 0;
+					}
+					if (time <= s*3/4){
+						r = 100;
+						g = 255;
+						b = 100;
+					}
+
+					if (time <= s/2){
+						r = 255;
+						g = 150;
+						b = 0;
+					}
+					if (time <= s/4){
+						r = 250;
+						g = 0;
+						b = 0;
+
+					}
+					if (time <= s/8){
+
+						r = 200;
+						g = 0;
+						b = 0;
+					}
+
+				}
+
+
+
+
+
+
+				Timer(xPosition,yPosition,timeLimit,count,red,green,blue){
+					xPos = xPosition;
+					yPos = yPosition;
+					time = timeLimit;
+					countdown = count;
+					r = red;
+					g = green;
+					b = blue;
+				}
+				void drawExamineTimer(){
+					fill(r,g,b)
+					rect(xPos,yPos,time,8)
+				}
+
+				void countdownExamineTimer(){
+					time = time - countdown;
+					if (time <= 0 && GAMEOVER !== 1 && DEAD !== 1){
+						r = 32;
+						g = 23;
+						b = 69;
+						stage1 = 0;
+						stage2 = 1;
+						stage2directions = 1;
+						pause = 1;
+					}
+
+				}
+
+				void drawAmbulanceTimer(){
+					fill(r,g,b)
+					rect(xPos,yPos,time,5)
+
+				}
+
+				void countdownAmbulanceTimer(){
+					time = time - countdown;
+					if (time <=0){
+						GAMEOVER = 1;
+					}
+
+				}
+
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</script>
+	</head>
+	<body>
+		<canvas id="mycanvas"></canvas>
+	</body>
+</html>

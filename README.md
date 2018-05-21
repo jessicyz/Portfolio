@@ -1,2 +1,9 @@
 # Portfolio
-Samples of code for my resume
+Samples of code
+
+Contains: 
+ - C++ 
+ - Java 
+ - GML 
+ - Javascript 
+ - GoOut (final project for CSCI201)

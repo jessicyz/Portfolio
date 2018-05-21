@@ -1,0 +1,10 @@
+
+{
+  "name": "GoOut--CSCI201",
+  "app_id": "25bb3c88",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
+

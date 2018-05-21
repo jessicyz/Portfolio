@@ -1,0 +1,78 @@
+<!--
+  Generated template for the EventDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!--
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD057GKa4DMMnfMrt0ngi3CBrdAdnRsYeM&libraries=places"></script> -->
+
+
+<ion-header>
+	<ion-navbar style="padding-top: 20px;">
+    	<ion-title text-center>Event Detail</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="outer-content" >
+	<!-- <ion-item>
+		<ion-label text-center color="danger" font-family="'Dancing Script', cursive" style="font-size : 30px">
+			<i>GoOut</i>
+		</ion-label>
+	</ion-item> -->
+
+	<ion-list>
+
+	  <ion-item class="item item-text-wrap">
+	    <ion-label stacked >Title : <b>{{title}}</b></ion-label>
+	    <label id="eventTitle" placeholder="Event title goes here"></label>
+	  </ion-item>
+
+	  <ion-item class="item" text-wrap >
+	    <ion-label stacked>Time : <b>{{start}} - {{end}}</b></ion-label>
+	    <label id="eventTime"></label>
+	  </ion-item>
+
+	   <ion-item text-wrap>
+	    <ion-label stacked>Date : <b>{{month}} / {{day}}</b></ion-label>
+	    <label id="eventDate"></label>
+	  </ion-item>
+
+
+	   <ion-item text-wrap>
+	    <ion-label stacked>Location : <b>{{location}}</b></ion-label>
+	    <label id="eventLocation" placeholder="Location goes here"></label>
+	  </ion-item>
+
+	   <ion-item text-wrap>
+	    <!-- <ion-label stacked>Description </ion-label> -->
+	    Description: <b>{{description}} </b>
+	    <!-- <label id="eventTitle" placeholder="Event title goes here"></label> -->
+	  </ion-item>
+
+	</ion-list>
+	
+     
+	   <!-- <button ion-item color="danger" text-center *ngIf="!isFollowed(event)" (click) = "follow(event)">
+=======
+
+
+
+
+
+
+	    <button ion-item color="danger" text-center>
+>>>>>>> master
+	      <ion-label>Interested</ion-label>
+		 <ion-note item-end><ion-icon name="checkmark-circle-outline" color="secondary"></ion-icon>
+	      </ion-note> 
+	    </button>-->
+<!-- 
+	    <button ion-item color="danger" text-center *ngIf="isFollowed(event)" (click) = "unfollow(event)">
+	      <ion-label>No Longer Interested</ion-label>
+	      <ion-note item-end><ion-icon name="checkmark-circle-outline" color="secondary"></ion-icon>
+	      </ion-note> 
+	    </button> -->
+</ion-content>

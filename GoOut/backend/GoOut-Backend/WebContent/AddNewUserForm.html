@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Add New User</title>
+		
+		<script>
+			function validateInfo(){
+
+				var requeststr = "ValidateInfo?username=" 
+						+document.myform.username.value 
+						+ "&password=" +document.myform.password.value +
+						"&fullName=" +document.myform.fullName.value;
+				
+				console.log(requeststr);
+				var xhttp = new XMLHttpRequest();
+				xhttp.open("GET", requeststr, false);
+				xhttp.send();
+
+				if(xhttp.responseText.trim().length > 0){
+					document.getElementById("formerror").innerHTML = xhttp.responseText;
+					return false;
+				}
+				return true;
+			}
+		</script>
+		
+		
+		
+	</head>
+	<body>
+<!-- 		<form name = "eventform" method = "POST" action = "CheckUsername">
+			Full Name <input type = "text" name = "fullName" /> <br />
+			<input type = "submit" name = "submit" value = "Submit Query" />
+		</form> -->
+		
+		<div id = "formerror"></div>
+		<form name = "myform" method = "POST" action="AddNewUser" onsubmit = "return validateInfo();" > 
+			Username <input type = "text" name = "username" /> <br />
+			<!-- <input type ="password" name = "password" /> <br /> -->
+			Password <input type = "text" name = "password" /> <br />
+			Full Name <input type ="text" name = "fullName" /> <br />
+			<input type="checkbox" name="private" value="isPrivate"> Private <br>
+			<input type = "submit" name = "submit" value = "Submit Query" />
+		</form>
+		
+	</body>
+</html>
