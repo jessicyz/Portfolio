@@ -1,0 +1,121 @@
+
+/* Class = "UITabBarItem"; title = "Charts"; ObjectID = "2Mo-B4-LVr"; */
+"2Mo-B4-LVr.title" = "Strickkarte";
+
+/* Class = "UILabel"; text = "Total Time: "; ObjectID = "2jq-Pi-DZn"; */
+"2jq-Pi-DZn.text" = "Gesamtzeit: ";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "3Mq-fv-U4z"; */
+"3Mq-fv-U4z.title" = "Title";
+
+/* Class = "UINavigationItem"; title = "Stitches"; ObjectID = "79A-an-7Tm"; */
+"79A-an-7Tm.title" = "Stiche";
+
+/* Class = "UIButton"; normalTitle = "Create Account"; ObjectID = "92N-8Y-F9H"; */
+"92N-8Y-F9H.normalTitle" = "Benutzerkonto anlegen";
+
+/* Class = "UILabel"; text = "Number of Stitches"; ObjectID = "Bz8-6E-r6d"; */
+"Bz8-6E-r6d.text" = "Anzahl der Stiche";
+
+/* Class = "UILabel"; text = "filename.pdf"; ObjectID = "CpC-jM-eBe"; */
+"CpC-jM-eBe.text" = "filename.pdf";
+
+/* Class = "UINavigationItem"; title = "Sign Up"; ObjectID = "FOQ-Bf-Qoa"; */
+"FOQ-Bf-Qoa.title" = "Anmelden";
+
+/* Class = "UILabel"; text = "Some error message..."; ObjectID = "FaE-4e-Yms"; */
+"FaE-4e-Yms.text" = "Some error message...";
+
+/* Class = "UILabel"; text = "00:00:00"; ObjectID = "FpU-Ws-YPN"; */
+"FpU-Ws-YPN.text" = "00:00:00";
+
+/* Class = "UIButton"; normalTitle = "Sign Up!"; ObjectID = "IuJ-YE-uw1"; */
+"IuJ-YE-uw1.normalTitle" = "Anmelden!";
+
+/* Class = "UILabel"; text = "Saiorse"; ObjectID = "Lb5-rg-YVN"; */
+"Lb5-rg-YVN.text" = "Saiorse";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "N68-NC-5zM"; */
+"N68-NC-5zM.text" = "Passwort";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "NJo-K0-FdJ"; */
+"NJo-K0-FdJ.title" = "Title";
+
+/* Class = "UITabBarItem"; title = "Stitches"; ObjectID = "Ne9-EV-JaA"; */
+"Ne9-EV-JaA.title" = "Stiche";
+
+/* Class = "UILabel"; text = "Stitch Name"; ObjectID = "P9a-u0-gfs"; */
+"P9a-u0-gfs.text" = "Stichname";
+
+/* Class = "UILabel"; text = "0.00s"; ObjectID = "PKO-fe-EX5"; */
+"PKO-fe-EX5.text" = "0.00s";
+
+/* Class = "UILabel"; text = "Error"; ObjectID = "RFY-jj-GwU"; */
+"RFY-jj-GwU.text" = "Error";
+
+/* Class = "UILabel"; text = "Pattern Name"; ObjectID = "SyO-hE-Uqm"; */
+"SyO-hE-Uqm.text" = "Pattern Name";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "VmD-Yp-qyF"; */
+"VmD-Yp-qyF.text" = "Title";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "VqH-CT-IeG"; */
+"VqH-CT-IeG.text" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "WmK-Gu-qnM"; */
+"WmK-Gu-qnM.normalTitle" = "Start";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "Wtt-K2-FC3"; */
+"Wtt-K2-FC3.title" = "Einstellungen";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "XLd-7V-3At"; */
+"XLd-7V-3At.title" = "Title";
+
+/* Class = "UILabel"; text = "Signed In As:"; ObjectID = "ZK4-X7-SaG"; */
+"ZK4-X7-SaG.text" = "Eingeloggt als:";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "bDU-gy-SI2"; */
+"bDU-gy-SI2.normalTitle" = "Anmeldung";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "duZ-ud-R9y"; */
+"duZ-ud-R9y.title" = "Einstellungen";
+
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "dyI-yU-Gyg"; */
+"dyI-yU-Gyg.normalTitle" = "Ausloggen";
+
+/* Class = "UIButton"; normalTitle = "Upload"; ObjectID = "gaq-Fg-LnY"; */
+"gaq-Fg-LnY.normalTitle" = "Hochladen";
+
+/* Class = "UILabel"; text = "email@email.com"; ObjectID = "hmb-yr-PYu"; */
+"hmb-yr-PYu.text" = "email@email.com";
+
+/* Class = "UILabel"; text = "Upload Chart"; ObjectID = "i53-TF-676"; */
+"i53-TF-676.text" = "Chart hochladen";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "jGj-Ia-r0g"; */
+"jGj-Ia-r0g.text" = "Detail";
+
+/* Class = "UILabel"; text = "Stitch"; ObjectID = "njs-98-M8i"; */
+"njs-98-M8i.text" = "Stitch";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "nyD-Xg-oOf"; */
+"nyD-Xg-oOf.text" = "Email";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "uoZ-je-Tyf"; */
+"uoZ-je-Tyf.text" = "Zeit";
+
+/* Class = "UILabel"; text = "00:00s"; ObjectID = "vYT-wO-PUH"; */
+"vYT-wO-PUH.text" = "00:00s";
+
+/* Class = "UILabel"; text = "Chart Name: "; ObjectID = "wH4-dv-Wav"; */
+"wH4-dv-Wav.text" = "Diagrammname: ";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "y5d-lt-qhx"; */
+"y5d-lt-qhx.text" = "Email";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "zHZ-L7-WHd"; */
+"zHZ-L7-WHd.text" = "Datum";
+
+"Stop" = "Halt"
+"Rename stitch?" = "Stich umbenennen?"
+"This will rename the stitch. Is that okay?" = "Dadurch wird der Stich umbenannt. Ist das in Ordnung?"
