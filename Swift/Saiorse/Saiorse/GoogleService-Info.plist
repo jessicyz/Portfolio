@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>688749528677-nt426qq9i0l8fif2i7cjtus6v726ancl.apps.googleusercontent.com</string>
+	<string>688749528677-8ihhhr7vp013nq8ihter1aob83naau0i.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.688749528677-nt426qq9i0l8fif2i7cjtus6v726ancl</string>
+	<string>com.googleusercontent.apps.688749528677-8ihhhr7vp013nq8ihter1aob83naau0i</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDqP5ub_ok4Nv7HorWYSzh85VdnPevb0uA</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.jessicyz.ZhuJessica-Final</string>
+	<string>com.jessicyz.Saiorse</string>
 	<key>PROJECT_ID</key>
 	<string>zhujessicafinal</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:688749528677:ios:ad19f5cd44f3e5f3</string>
+	<string>1:688749528677:ios:d2e9b45f30d76134</string>
 	<key>DATABASE_URL</key>
 	<string>https://zhujessicafinal.firebaseio.com</string>
 </dict>
