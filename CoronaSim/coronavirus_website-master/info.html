@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>virus tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <!-- add after bootstrap.min.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"
+    />
+    <!-- add after bootstrap.min.js -->
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+    <link rel="stylesheet" href="course-styles.css">
+
+    <script src="https://kit.fontawesome.com/4145f6a1ca.js"></script>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148347432-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-148347432-1');
+    </script> -->
+
+  </head>
+  <body data-spy="scroll" data-target="#toc">
+
+
+    <nav class="navbar navbar-expand-lg ">
+      <a class="navbar-brand navbar-text" href="#">virus tracker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" >    <i class="fas fa-bars" style="color:##000000; font-size:28px;"></i>
+</span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"> <a class ="nav-link" href="main.html">Home</a></li>
+        <li class="nav-item"> <a class ="nav-link" href="info.html">Information</a></li>
+        <li class="nav-item"> <a class ="nav-link" href="game.html">Game</a></li>
+        <li class="nav-item"> <a class ="nav-link" href="ourteam.html">Our Team</a></li>
+        <!-- <li class="nav-item"> <a class ="nav-link" href="schedule.html">Schedule</a></li> -->
+        <!-- <li class="nav-item"> <a class ="nav-link" href="opp.html">Opportunities</a></li> -->
+      </ul>
+
+    </div>
+  </nav>
+
+
+
+    <div class = "main-text">
+      <div class="container">
+        <div class="row">
+          <!-- sidebar, which will move to the top on a small screen -->
+          <div class="col-sm-3">
+            <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+          </div>
+          <!-- main content area -->
+          <div class="col-sm-9">
+
+            <h2>Background</h2>
+            This outbreak of the respiratory disease was first detected in China, and it has now been detected in almost 90 locations internationally, including the United States. 
+            <br>
+            <br>
+            Coronaviruses are a large family of viruses that are common in people and many different species of animals, including camels, cattle, cats, and bats. 
+            <br>
+            <br>
+            On January 30, 2020, the WHO World Health Organization declared the outbreak a “ public health emergency of international concern”. (PHEIC)
+            <br>
+            <br>
+            While the range of symptoms for the two viruses is similar, the fraction with severe disease appears to be different. For COVID-19, data to date suggest that 80% of infections are mild or asymptomatic, 15% are severe infection, requiring oxygen and 5% are critical infections, requiring ventilation. 
+            <br>
+            <br>
+            Symptoms can include fever, cough, shortness of breath.
+
+            <br> <br>
+            <h2>Key Statistics</h2>
+            1. Case number
+            <br>
+            Internationally: 107862
+            <br>
+            U.S.: 464
+            <br>
+            Track live number <a href="https://www.worldometers.info/coronavirus/">here</a>
+            <br>
+            2. Death number
+            <br>
+            Internationally: 3666
+            <br>
+            U.S.: 19
+            <br>
+            Track live number <a href="https://www.worldometers.info/coronavirus/">here</a>
+            <br>
+            3. Infection rate
+            <br>
+            While the true mortality of COVID-19 will take some time to fully understand, the data we have so far indicate that the crude mortality ratio (the number of reported deaths divided by the reported cases) is between 3-4%.  <a href="https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200306-sitrep-46-covid-19.pdf?sfvrsn=96b04adf_2">here</a>
+            <br> <br>
+            <h2>How to prevent</h2>
+
+            <ul>
+              <li>Wash your hand</li>
+              Increasing the number of people with clean hands by 10% could slow down the rate at which disease can spread by as much as 24%.<a href="https://www.medicalnewstoday.com/articles/why-hand-washing-really-could-slow-down-an-epidemic">here</a>
+              <li>Wear a face mask if you are going to a crowded area</li>
+              <li>Cover your nose and mouth when sneezing and coughing</li>
+              <li>Self-quarantine if you haven travel to areas where COVID-19 is spreading </li>
+              <li>Wear a face mask if you </li>
+              <li>Closely watch the news to see if your area is safe.  </li>
+            </ul>
+            <br> <br>
+            <!-- <h2>In Class Activities </h2>
+
+            We will be engaged in solving problems in class. You will work in groups to answer
+            questions, discuss, and express your opinion. From time to time in class activities
+            will be graded for completion.
+            <br> <br>
+            <h2>Homework Assignments</h2>
+
+            Homework assignments are usually assigned on a weekly basis and they are usually due Fridays at 5:00 pm.
+            The format of the homework and how to submit (electronically or on paper) will be detailed in the
+            homework instructions. Homework assignemtnts have to be completed individually. You may not seek help
+            from anyone except me or TAs. For each hour, homework assignments are submitted late,
+            you will lose 10% of your grade. Thus if you submit your homework 10 hours later than it is due,
+            you will not receive any points, however, you will still receive feedback.
+            <br> <br>
+
+            <h2>Labs</h2>
+            You will be working on lab assignments during discussion sessions in groups.
+            You will complete most lab assignments on RStudio Cloud. Labs are due to the end of discussion time.
+            Further instructions on how to submit will be shared by your TAs during each discussion.
+            If you are behind in the lab, seek help. If you are ahead provide help.
+            <br><br>
+
+            <h2>Midterm</h2>
+            There will be one midterm exam and it is scheduled for Nov 4. The midterm will have both an in class
+            and take-home part. For the take-home part you will have a week to complete. The in class part will be closed book but you will be given equations in the exam.
+            You will need a scientific calculator. You will not be allowed to use a graphing calculator.
+            <br><br>
+            <h2>Final Exam</h2>
+            Final exams are scheduled for Wed, Dec 11 (Section C) 08:00 -10:00 am and Fri, Dec 13 (Section D) 08:00 -10:00 am
+            The final will have both an in class  and take-home part. For the take-home part you will have a week to complete.
+            The in class part will be closed book but you will be given equations in the exam. The final will be cumulative.
+            You will need a scientific calculator. You will not be allowed to use a graphing calculator.
+            <br> <br>
+            <h2>Extra credit</h2>
+
+            There are certain circumstances that you will be granted extra credit:
+            <ul>
+              <li>Participation in Statistics and Data Science Related Competitions
+            <ul>
+              <li>National Competitions</li>
+              <li>Statewide Competitions</li>
+              <li>Campus Competitions</li>
+            </ul> </li>
+          </ul>
+
+            The number of points awarded based on competitions will be at the
+            discretion of the instructor based on the alignment of course goals and  the goals
+            of the competition, your ranking in the competition, and the amount of time put
+            into competition.
+
+            There are certain circumstances that may be granted extra credit at the discretion
+            of the instructor:
+
+            <ul>
+              <li>Asking "good" questions on Piazza: instructors, TAs, and graders can mark
+              your question as good. Note that extra credit is only possible for multiple
+            good question status. You should not try to achieve this status. Your focus should
+          be using Piazza effectively then extra points may follow. </li>
+
+          <li>Posting "good" answers on Piazza: instructors, TAs, and graders can mark
+          your answers as good. Note that extra credit is only possible for multiple
+        good question status. You should not try to achieve this status. Your focus should
+      be using Piazza effectively then extra points may follow</li>
+            </ul>
+
+            </ul>
+            <br>
+            <h1>Grading Scheme </h1>
+            <br>
+            Grades will <b>not</b> be curved and will <b>not</b> be rounded.
+            Please do not email me about any of these.
+
+            The following weights will be adopted in calculating the total grade.
+            <br><br>
+<table class="table table-condensed table-striped text-left">
+<thead>
+<tr>
+<th><span>Component</span></th>
+<th><span>Weight</span></th>
+</tr>
+</thead>
+
+<tbody>
+
+
+<tr>
+<td>Reading Questions</td>
+<td>7%</td>
+</tr>
+
+<tr>
+<td>In Class Activities</td>
+<td>8%</td>
+</tr>
+
+<tr>
+<td>Labs</td>
+<td>15%</td>
+</tr>
+
+<tr>
+<td>Homework</td>
+<td>25%</td>
+</tr>
+
+<tr>
+<td>Midterm</td>
+<td>20%</td>
+</tr>
+
+<tr>
+<td>Final Exam</td>
+<td>25%</td>
+</tr>
+
+</tbody>
+</table>
+
+The weighted percentage score will be assigned a letter grade based on the following scheme:
+<br><br>
+
+<table class="table table-condensed table-striped text-left">
+<thead>
+<tr>
+<th><span>Weighted Total Percentage</span></th>
+<th><span>Letter Grade</span></th>
+</tr>
+</thead>
+
+<tbody>
+
+  <tr>
+  <td>97  -  100   </td>
+  <td>A+</td>
+  </tr>
+
+<tr>
+<td>93  -  96.99   </td>
+<td>A</td>
+</tr>
+
+<tr>
+<td>90  -  92.99</td>
+<td>A-</td>
+</tr>
+
+<tr>
+<td>87  -  89.99</td>
+<td>B+</td>
+</tr>
+
+<tr>
+<td>83  -  86.99</td>
+<td>B</td>
+</tr>
+
+<tr>
+<td>80  -  82.99</td>
+<td>B-</td>
+</tr>
+
+<tr>
+<td>77  -  79.99 </td>
+<td>C+</td>
+</tr>
+
+<tr>
+<td>73  -  76.99</td>
+<td>C</td>
+</tr>
+
+<tr>
+<td>70  -  72.99</td>
+<td>C-</td>
+</tr>
+
+<tr>
+<td>67  -  69.99</td>
+<td>D+</td>
+</tr>
+
+<tr>
+<td>60  -  66.99 </td>
+<td>D</td>
+</tr>
+
+<tr>
+<td>Below  59.99 </td>
+<td>F</td>
+</tr>
+
+</tbody>
+</table>
+
+
+            <h1>Academic Honesty</h1>
+            <br>
+            You are expected to comply to rules set by the Office of <a href="https://aisc.uci.edu/">
+            Academic Integrity and Student Conduct</a>. Each assignment has clearly labeled
+            instructions on whether you can work with others or not. If there are no
+            instructions you should assume that the work should be completed by you only
+            from start to finish.  You cannot share or distribute solutions online or offline or in any media now
+            or in the future.
+
+            <br><br>
+            <h1>Copyright</h1>
+            <br>
+            I already make many of my course materials readily accesible on this website. However, that
+            does not grant you the right to copy, sell, or distribute any material of this
+            course provided on this website or elsewhere. <br> <br>
+
+
+            Selling and distributing course materials not only violates the
+            <a href="https://aisc.uci.edu/policies/pacaos/">student code of conduct</a>, but also violates UC’s  policy on the
+            <a href="https://policy.ucop.edu/doc/2100005/CourseRecordings">Use of
+            Recordings of Course Presentations</a>.
+            <br><br>
+
+            If you are an instructor who would like to use part of this syllabus,
+            please send me an email and let me know what you would like to use.
+            <br> <br>
+            <h1>Accommodations</h1>
+
+            University of California, Irvine is committed to providing reasonable accommodations
+            for all persons with permanent or temporary disabilities. This syllabus is available in
+            alternate formats upon request. If you have a disability that impacts your participation
+            in this class, please contact the Disability Services Center (DSC) as soon as possible.
+            Students approved for accommodations will notify the instructor by sending out a
+            Faculty Notification Letter from the DSC website. Disability Services Center - Building
+            313 in Engineering Gateway - <a href="www.dsc.uci.edu">www.dsc.uci.edu</a> - (949) 824-7494
+
+            <br> <br>
+            <h1>Diversity and Inclusion</h1>
+            <br>
+            My goal is to make everyone (yes, that includes you too) feel welcome not only in my classroom but also in the field of
+            statistics and data science. If there is any reason you do not feel welcome
+            in this class, please talk to me. If anything is said to you that makes you feel uncomfortable
+            please talk to me. If there is any life event that is interfering with your learning in this
+            class, please talk to me. I may not be able to solve all your problems but I may be able to
+            direct you to the right resources on campus.
+            <br> <br>
+
+            <h1>Recordings</h1>
+            Please do not take photos of me or your classmates without consent. The teaching materials are also
+            provided to you so you should not feel the need to take photos. In addition, please do not record audio
+            or video during class. If there is a need for any recordings during class please talk to me before class.
+
+            <br><br>
+
+            <h1>Communication Etiquette</h1>
+            <br><br>
+            <h2>Addressing People in Academia</h2>
+            <br>
+            Addressing people in academia might be one of the most difficult
+            part of being in an academic setting. Below I try to lighten the general
+            information with a side note that each academic has their own preference.
+
+            <br> <br>
+
+            <ul>
+              <li>If a person already informs you about how you should call them please respect that.</li>
+              <li>Undergraduate degrees may be followed up by master's and doctoral degrees. If a person has a doctoral degree than they can be
+                referred as <i>Dr.</i> folowed by their last name. Yes, just like medical doctors! It may be hard to guess whether someone has a doctoral degree. If you are, for instance, emailing
+              someone for an opportunity, make sure to check their website before emailing them. They may list their degrees. The most common doctoral degree
+            is abbreviated as <i>Ph.D.</i> but there are other <a href="https://en.wikipedia.org/wiki/List_of_doctoral_degrees_in_the_US">doctoral degrees</a>.
+          Since the title <i>Dr.</i> is based on a degree, you can also use this title with anyone outside of academia if they have a doctoral degree.</li>
+            <li>Even though many college professors have doctoral degrees, not all do. For instance, in the field of fine arts, master's degrees serve as the terminal degree.
+            In other words, a fine arts professor may not have a doctorate but they have completed all the degree requirements to become a professor. For such academics
+          who do not have a doctorate degree, you can refer to them as <i>Prof.</i> followed by their last name. You can also use the <i>Prof.</i> title with academics who
+        have doctoral degrees. In short, the title Prof. comes with the job. </li>
+        <li>The titles <i>Miss</i> and <i>Mrs.</i> are used for unmarried and married women respectively. In formal settings, since you are not aware of marital status
+        of the woman you are referring to you can use <i>Ms.</i>. Use this title only with women who are not <i>Dr.</i> or  <i>Prof.</i>. The male title <i>Mr.</i>
+      does not indicate marital status and can be used for men who are not <i>Dr.</i> or <i>Prof.</i>. Similarly the title <i>Mx.</i> does not indicate marital
+    status and can be used for nonbinary people who are not <i>Dr.</i> or <i>Prof.</i>
+    <li>Some people may prefer that you call them by their first name and some actually might find this rude. Unless you have been told to use first names,
+    use one of the aforementioned titles. </li>
+
+  </li>
+            </ul>
+
+            <table class="table table-condensed table-striped text-center">
+              <tr>
+                <td></td>
+                <td>Doctoral/Medical <br>Degree Required</td>
+                <td>Job Specific</td>
+                <td>Gender Neutral</td>
+                <td>Based on <br>Marital Status</td>
+              </tr>
+
+              <tr>
+                <td>Dr.</td>
+                <td><i class="fas fa-check"></i></td>
+                <td></td>
+                <td><i class="fas fa-check"></i></td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Miss</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>Mr.</td>
+                <td></td>
+                <td></td>
+                <td></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mrs.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><i class="fas fa-check"></i></td>
+              </tr>
+
+              <tr>
+                <td>Ms.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mx.</td>
+                <td></td>
+                <td></td>
+                <td><i class="fas fa-check"></i></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Prof.</td>
+                <td></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+            </table>
+
+
+            <h2 id ="email">Writing an email</h2>
+
+            While communicating over email, please make sure the email
+            <ul>
+              <li>has an informative subject line. </li>
+              <li>articulates your question or problem well.</li>
+              <li>has a closing statement such as <i>Sincerely, Kind Regards</i> etc.</li>
+              <li>has your name at the end.</li>
+            </ul>
+
+            Here is a sample email:
+            <blockquote>
+              Subject: Stats 67 - Your Subject <br> <br>
+              Dear Dr. Dogucu (or your TA or grader's name), <br>
+
+              I hope you are doing well (or some other humane sentence).
+              I am writing to you regarding ______________. (Your concern or problem)
+
+              (Any explanations, requests or suggestions for solutions to your problem) <br>
+              <br>
+              Sincerely/Kind regards, <br>
+              Your name <br>
+
+            </blockquote>
+            <br>
+            <h2>Working in a group </h2>
+            <br><br>
+            Learning skills to work in a team efficiently is valuable. In a recent <a href="https://www.aacu.org/leap/public-opinion-research/2015-survey-falling-short">survey</a> conducted by Association of
+            American and Colleges and Universities (AACU) found that employers ranked teamwork skills as one of
+            the most valued skills and even more so than
+            undergraduate major when hiring recent graduate skills.
+
+            Understandably, team work comes with its challenges given your busy schedules and different interests. However,
+            remember that work place teamwork will not be much different than your current teamwork experiences. Struggles
+            may always rise but here are few ways to avoid them. When working in a group:
+            <ul>
+              <li>Communicate your schedule to other members clearly early on.</li>
+              <li>Listen to your team members with an open mindset.</li>
+              <li>Share your resources with your team members.</li>
+              <li>Communicate frequently.</li>
+              <li>Remember that the goal is to learn so help each other learn rather than just to get the work done.</li>
+
+            </ul>
+
+            <h2 id ="online">Online communication </h2>
+            Most of our online comminication will take place on Piazza. While communicating online please note the following:
+              <ul>
+                <li>Before posting a question, please make sure that the same question has not been posted before.</li>
+                <li>If you choose to post memes or any jokes, be mindful. Any joke about a person,
+                or a group of people, or cultures is not funny. However statistics jokes are always welcome. </li>
+              </li>Respect opinions of others</li>
+              <li>There are absolutely no stupid questions. Do not feel shy about asking questions. Do not
+              judge anyone about any question that they ask.</li>
+              </ul>
+            <br><br>
+          </div>
+        </div>
+      </div> -->
+
+
+
+    </div> <!--main-text-->
+
+
+<!--     <footer>
+
+    Copyright &copy; <a href="https://mdogucu.ics.uci.edu">Dr. Mine Dogucu</a>. All Rights Reserved.
+
+
+    </footer> -->
+
+  </body>
+</html>
