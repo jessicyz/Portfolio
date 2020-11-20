@@ -21,4 +21,4 @@ Everett Frank
 **Music and SFX**
 Sandy Chen
 
-[Trailer](https://youtu.be/dx_ceysq2B8)
+[Trailer](https://youtu.be/G6ZlAF_kPXo)
